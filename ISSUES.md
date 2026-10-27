@@ -1,3 +1,5 @@
+Issues Addressed
+
    | Issue | Type | Line(s) | Description | Fix Approach |
    |-------|------|---------|-------------|--------------|
    | Use of eval() | Security (Bandit B307, Pylint W0123) | 92 | eval runs arbitrary code, and it was triggered by an environment variable. Bandit rated it medium severity. | Removed the RUN_UNSAFE_DEMO block and the now-unused import os. |
