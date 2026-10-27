@@ -4,19 +4,20 @@ import logging
 TICKETS = {}
 
 
-def create_ticket(title, description, reporter, priority="medium", category="general"):
+def create_ticket(title, description, reporter,
+                  priority="medium", category="general"):
     """Create a new ticket and add it to the tracker."""
     if not title:
         return None
     ticket_id = str(len(TICKETS) + 1)
     ticket = {
-        "id": ticket_id, 
-        "title": title, 
-        "description": description, 
-        "priority": priority, 
-        "category": category, 
-        "status": "open", 
-        "reporter": reporter, 
+        "id": ticket_id,
+        "title": title,
+        "description": description,
+        "priority": priority,
+        "category": category,
+        "status": "open",
+        "reporter": reporter,
         "assignee": None
         }
     audit_log = []
@@ -89,8 +90,10 @@ def is_open(ticket_id):
 def main():
     """Run a demo of the ticket tracker."""
     logging.basicConfig(level=logging.INFO)
-    create_ticket("Cannot sign in", "Password reset link fails", "alex@example.com")
-    create_ticket("Billing question", "Charged twice", "lee@example.com", "high")
+    create_ticket("Cannot sign in", "Password reset link fails",
+                  "alex@example.com")
+    create_ticket("Billing question", "Charged twice",
+                  "lee@example.com", "high")
     assign_ticket("1", "agent-01")
     update_status("1", "in_progress")
     print_ticket_report()
@@ -100,6 +103,7 @@ def main():
     if ticket_id:
         close_ticket(ticket_id)
     save_tickets()
+
 
 if __name__ == "__main__":
     main()
