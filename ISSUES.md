@@ -1,4 +1,4 @@
-Issues Addressed
+**Issues Addressed**
 
    | Issue | Type | Line(s) | Description | Fix Approach |
    |-------|------|---------|-------------|--------------|
